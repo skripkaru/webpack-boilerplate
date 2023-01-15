@@ -1,0 +1,35 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss", "stylelint-config-clean-order"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "rule-empty-line-before": "always",
+    "declaration-no-important": true,
+    "declaration-empty-line-before": "never",
+    "order/order": [
+      "custom-properties",
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::(before|after)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      }
+    ]
+  }
+}
