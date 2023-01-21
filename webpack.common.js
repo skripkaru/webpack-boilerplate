@@ -3,6 +3,7 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const pages = fs.readdirSync(path.resolve(__dirname, 'src/pages'))
 
@@ -10,11 +11,23 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: ['./js/main.js', './scss/main.scss'],
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash:8].js',
-    clean: true
+    filename: 'js/[name].[contenthash:8].js'
+  },
+  resolve: {
+    alias: {
+      Assets: path.resolve(__dirname, 'src/assets/'),
+      Images: path.resolve(__dirname, 'src/assets/images/'),
+      Icons: path.resolve(__dirname, 'src/assets/icons/'),
+      Fonts: path.resolve(__dirname, 'src/assets/fonts/')
+    }
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: '[id].[hash].css'
+    }),
     ...pages.map(
       (page) =>
         new HtmlWebpackPlugin({
@@ -27,8 +40,6 @@ module.exports = {
     new SVGSpritemapPlugin('./src/assets/icons/*.svg', {
       output: {
         filename: 'sprite.svg',
-        svg4everybody: true,
-        svgo: true
       },
       sprite: {
         prefix: false,
@@ -40,7 +51,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.ico')
+          from: path.resolve(__dirname, 'src/assets/favicon.ico')
         }
       ]
     })
@@ -48,17 +59,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/i,
+        test: /\.js$/i,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
         test: /\.(scss|css)$/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.pug$/i,
-        loader: 'pug-loader'
+        include: path.resolve(__dirname, 'src'),
+        loader: 'pug-loader',
+        options: {
+          pretty: true
+        }
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/i,

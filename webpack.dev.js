@@ -7,8 +7,15 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     open: true,
+    port: 3000,
     static: {
       directory: path.join(__dirname, 'dist')
+    },
+    watchFiles: {
+      paths: ['src/**/*', 'dist/**/*'],
+      options: {
+        usePolling: false
+      }
     }
   }
 })
