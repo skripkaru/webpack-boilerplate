@@ -39,7 +39,7 @@ module.exports = {
     ),
     new SVGSpritemapPlugin('./src/assets/icons/*.svg', {
       output: {
-        filename: 'sprite.svg',
+        filename: 'sprite.svg'
       },
       sprite: {
         prefix: false,

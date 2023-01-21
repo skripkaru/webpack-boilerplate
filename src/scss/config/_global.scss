@@ -15,13 +15,10 @@ body {
 
 body {
   scroll-behavior: smooth;
-
   display: flex;
   flex-direction: column;
-
   min-width: 320px;
   margin: 0;
-
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: 400;
@@ -43,11 +40,8 @@ a {
 
 button {
   cursor: pointer;
-
   display: inline-block;
-
   padding: 0;
-
   background-color: transparent;
   border: none;
 }
@@ -82,17 +76,13 @@ ul:not([class]) {
 
     &::before {
       content: '';
-
       position: absolute;
       top: 8px;
       left: 0;
-
       display: inline-block;
-
       width: 8px;
       height: 8px;
       margin: 0 0.5rem;
-
       background: var(--color-primary);
       border-radius: 50%;
     }

@@ -8,7 +8,7 @@ module.exports = merge(common, {
   mode: 'production',
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: 'all'
     },
     minimizer: [
       new TerserPlugin({
