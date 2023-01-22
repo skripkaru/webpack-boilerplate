@@ -6,6 +6,9 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    clean: true
+  },
   optimization: {
     splitChunks: {
       chunks: 'all'

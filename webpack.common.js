@@ -11,7 +11,6 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: ['./js/main.js', './scss/main.scss'],
   output: {
-    clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash:8].js'
   },
