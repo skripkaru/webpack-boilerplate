@@ -1,0 +1,6 @@
+{
+  "nav": [
+    { "url": "index.html", "title": "Home"},
+    { "url": "about.html", "title": "About"}
+  ]
+}

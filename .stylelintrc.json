@@ -1,0 +1,22 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order", "stylelint-config-prettier-scss"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "rules": {
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      "rules",
+      "at-rules"
+    ],
+    "declaration-empty-line-before": "never"
+  }
+}

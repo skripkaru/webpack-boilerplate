@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "name": "webpack-boilerplate",
+  "description": "Webpack Boilerplate",
+  "author": "Evgeniy Skripkaru",
+  "license": "ISC",
+  "scripts": {
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "npx eslint \"src/**/*.js\" --fix",
+    "lint:css": "npx stylelint \"src/**/*.scss\" --fix",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "yarn lint"
+    ],
+    "src/**/*.scss": [
+      "yarn lint:css"
+    ],
+    "src/**/*.{js,scss,hbs}": [
+      "yarn format"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "handlebars": "^4.7.8",
+    "handlebars-loader": "^1.7.3",
+    "html-webpack-plugin": "^5.6.0",
+    "husky": "^8.0.3",
+    "image-minimizer-webpack-plugin": "^3.8.3",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "lint-staged": "^13.2.1",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss": "^8.4.20",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-clean-order": "^5.0.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^4.3.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svg-spritemap-webpack-plugin": "^4.5.0",
+    "svgo": "^3.0.2",
+    "terser-webpack-plugin": "^5.3.6",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "focus-visible": "^5.2.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

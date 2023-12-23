@@ -1,0 +1,15 @@
+// Vendors
+@import "normalize.css";
+
+// Base
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+// UI
+@import 'ui/container';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
