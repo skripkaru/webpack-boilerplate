@@ -1,14 +1,7 @@
-@mixin scrollbar(
-  $size: 8px,
-  $radius: 0,
-  $track-bg: #f6f6f6,
-  $thumb-bg: #79bcd2,
-  $border: none
-) {
-
+@mixin scrollbar($size: 8px, $radius: 0, $track-bg: #f6f6f6, $thumb-bg: #79bcd2, $border: none) {
   & {
-    scrollbar-width: thin;
     scrollbar-color: $thumb-bg $track-bg;
+    scrollbar-width: thin;
   }
 
   &::-webkit-scrollbar {

@@ -68,7 +68,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "focus-visible": "^5.2.0"
+    "focus-visible": "^5.2.0",
+    "normalize.css": "^8.0.1"
   },
   "browserslist": [
     "defaults"

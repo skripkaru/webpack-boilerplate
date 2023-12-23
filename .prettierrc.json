@@ -7,5 +7,13 @@
   "trailingComma": "none",
   "bracketSpacing": true,
   "endOfLine": "auto",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "**/*.hbs",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
 }
