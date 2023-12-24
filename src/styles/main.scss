@@ -1,11 +1,11 @@
 // Vendor
 @import 'normalize.css';
 
-// Base
-@import 'variables';
-@import 'mixins';
-@import 'fonts';
-@import 'global';
+// Config
+@import 'config/variables';
+@import 'config/mixins';
+@import 'config/fonts';
+@import 'config/global';
 
 // UI
 @import 'ui/container';

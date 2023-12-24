@@ -75,7 +75,7 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin({
-      patterns: [path.resolve(__dirname, 'src/favicon.svg')]
+      patterns: [path.resolve(__dirname, 'src/assets/favicon.svg')]
     })
   ]
 }
