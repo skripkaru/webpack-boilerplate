@@ -1,0 +1,10 @@
+<div style="display: flex; flex-direction: column; gap: 16px">
+  <img src="{{image}}" alt="{{name}}" />
+  <h3>{{name}}</h3>
+  <p>I am positioned as a {{jobTitle}}</p>
+  {{#if company}}
+    <span>{{company}}</span>
+  {{else}}
+    <span>-</span>
+  {{/if}}
+</div>

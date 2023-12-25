@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js",
     "lint": "npx eslint \"src/**/*.js\" --fix",
     "lint:css": "npx stylelint \"src/**/*.scss\" --fix",
     "format": "prettier --ignore-path .gitignore --write .",
