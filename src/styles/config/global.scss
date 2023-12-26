@@ -37,10 +37,6 @@ a {
   text-decoration: none;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 button {
   cursor: pointer;
   display: inline-block;
