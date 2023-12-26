@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-{{>head title='Home' }}
-<body>
-<div class="site-container">
-  {{>header }}
-  <main class="main">
-    <div class="container">
-
-      <div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));gap: 32px;">
-        {{#each employees}}
-          {{>card }}
-        {{/each}}
-      </div>
-
-    </div>
-  </main>
-  {{>footer }}
-</div>
-</body>
-</html>
+{{#>layouts/default title='Home' }}
+  <div style="display: grid;grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));gap: 32px;">
+    {{#each employees}}
+      {{>components/card }}
+    {{/each}}
+  </div>
+{{/layouts/default}}

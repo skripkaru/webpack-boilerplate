@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta
@@ -9,5 +11,17 @@
   <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
   <link as="font" crossorigin href="assets/fonts/Roboto-Bold.woff2" rel="preload" type="font/woff2" />
   <link as="font" crossorigin href="assets/fonts/Roboto-Regular.woff2" rel="preload" type="font/woff2" />
-  <title>{{ title }}</title>
+  <title>{{title}}</title>
 </head>
+<body>
+<div class="site-container">
+  {{>components/header }}
+  <main class="main">
+    <div class="container">
+      {{> @partial-block }}
+    </div>
+  </main>
+  {{>components/footer }}
+</div>
+</body>
+</html>

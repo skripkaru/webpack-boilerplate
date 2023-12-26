@@ -13,7 +13,7 @@
     {
       "name": "Michael John",
       "jobTitle": "Senior Accountant",
-      "image": "../assets/images/01.jpg",
+      "image": "assets/images/01.jpg",
       "company": "Google"
     },
     {
@@ -25,7 +25,7 @@
     {
       "name": "Alex Cross",
       "jobTitle": "Project Manager",
-      "image": "../assets/images/03.jpg"
+      "image": "assets/images/03.jpg"
     }
   ]
 }
