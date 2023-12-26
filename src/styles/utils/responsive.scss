@@ -1,0 +1,13 @@
+.is-desktop {
+
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.is-mobile {
+
+  @include mobile-plus {
+    display: none !important;
+  }
+}

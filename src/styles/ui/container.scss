@@ -1,6 +1,19 @@
+:root {
+  --container-padding: 32px;
+  --container-width: 1200px;
+
+  @include tablet {
+    --container-padding: 24px;
+  }
+
+  @include mobile {
+    --container-padding: 16px;
+  }
+}
+
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: calc(var(--container-width) + var(--container-padding) * 2);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--container-padding);
 }
