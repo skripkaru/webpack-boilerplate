@@ -1,12 +1,20 @@
 {
-  "nav": [
+  "menu": [
     {
       "url": "index.html",
-      "title": "Home"
+      "title": "Главная"
     },
     {
-      "url": "about.html",
-      "title": "About"
+      "url": "nav.html",
+      "title": "Навигация"
+    },
+    {
+      "url": "ui.html",
+      "title": "Компоненты"
+    },
+    {
+      "url": "#",
+      "icon": "search"
     }
   ]
 }

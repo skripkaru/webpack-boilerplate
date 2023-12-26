@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.menu__link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: opacity var(--transition);
+
+  @include hover {
+    opacity: 0.5;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}

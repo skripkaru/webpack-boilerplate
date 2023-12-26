@@ -1,0 +1,11 @@
+{{#>layouts/default title='Навигация' }}
+<h1>Навигация</h1>
+
+<ul>
+  {{#each menu }}
+  <li>
+    <a href="{{ url }}">{{ title }}</a>
+  </li>
+  {{/each }}
+</ul>
+{{/layouts/default}}
