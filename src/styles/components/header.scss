@@ -1,12 +1,25 @@
 .header {
-  padding: 16px 0;
-  border-bottom: 1px solid #ccc;
-  background-color: #fff;
   position: sticky;
   top: 0;
+  padding: 16px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
   transition: transform 0.5s ease-in-out;
 
   &.hide {
     transform: translateY(-100%);
   }
+}
+
+.header__inner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__navbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
