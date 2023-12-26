@@ -8,24 +8,5 @@
       "url": "about.html",
       "title": "About"
     }
-  ],
-  "employees": [
-    {
-      "name": "Michael John",
-      "jobTitle": "Senior Accountant",
-      "image": "assets/images/01.jpg",
-      "company": "Google"
-    },
-    {
-      "name": "Raylie Clarke",
-      "jobTitle": "Software Engineer",
-      "image": "assets/images/02.jpg",
-      "company": "Yandex"
-    },
-    {
-      "name": "Alex Cross",
-      "jobTitle": "Project Manager",
-      "image": "assets/images/03.jpg"
-    }
   ]
 }

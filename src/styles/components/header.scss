@@ -10,3 +10,13 @@
     transform: translateY(-100%);
   }
 }
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__inner {
+}

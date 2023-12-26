@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-  />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
-  <link as="font" crossorigin href="assets/fonts/Roboto-Bold.woff2" rel="preload" type="font/woff2" />
-  <link as="font" crossorigin href="assets/fonts/Roboto-Regular.woff2" rel="preload" type="font/woff2" />
-  <title>{{title}}</title>
-</head>
-<body>
-<div class="site-container">
-  {{>components/header }}
-  <main class="main">
-    <div class="container">
-      {{> @partial-block }}
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+    <link as="font" crossorigin href="assets/fonts/Roboto-Bold.woff2" rel="preload" type="font/woff2" />
+    <link as="font" crossorigin href="assets/fonts/Roboto-Regular.woff2" rel="preload" type="font/woff2" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div class="layout">
+      {{>components/header }}
+      <main class="main">
+        <div class="container">{{> @partial-block }}</div>
+      </main>
+      {{>components/footer }}
     </div>
-  </main>
-  {{>components/footer }}
-</div>
-</body>
+  </body>
 </html>

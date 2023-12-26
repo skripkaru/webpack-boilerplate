@@ -1,9 +1,19 @@
 <header class="header">
   <div class="container">
-    <nav style="display: flex; gap: 16px">
-      {{#each nav }}
-      <a href="{{ url }}">{{ title }}</a>
-      {{/each }}
-    </nav>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <a href="https://github.com/skripkaru/webpack-boilerplate" target="_blank">
+        <img width="40" src="assets/images/logo.svg" alt="" />
+      </a>
+      <nav class="navbar">
+        {{#each nav }}
+        <a href="{{ url }}">{{ title }}</a>
+        {{/each }}
+        <button>
+          <svg width="24" height="24">
+            <use xlink:href="sprite.svg#close" />
+          </svg>
+        </button>
+      </nav>
+    </div>
   </div>
 </header>
