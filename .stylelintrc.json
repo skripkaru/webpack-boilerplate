@@ -17,6 +17,15 @@
       "rules",
       "at-rules"
     ],
-    "declaration-empty-line-before": "never"
+    "no-empty-source": null,
+    "declaration-empty-line-before": "never",
+    "no-missing-end-of-source-newline": null,
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
+    "no-descending-specificity": null,
+    "function-url-quotes": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "number-max-precision": null,
+    "value-no-vendor-prefix": null
   }
 }
