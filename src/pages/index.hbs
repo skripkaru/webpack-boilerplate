@@ -1,5 +1,11 @@
 {{#>layouts/default title='Главная' }}
 <section class="section">
-  <h1>Главная</h1>
+  <h1>{{title}}</h1>
+  <ul class="grid gap-xs offset">
+    <!-- using of the arraySize helper -->
+    <li>{{ arraySize persons }} persons:</li>
+    {{#each persons}} {{> components/person person=.}} {{/each}}
+  </ul>
+  <img src="{{image}}" alt="" />
 </section>
 {{/layouts/default}}

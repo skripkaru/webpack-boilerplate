@@ -1,5 +1,15 @@
 {
-  "menu": [
+  "image": "@assets/images/image.jpg",
+  "logo": {
+    "url": "#",
+    "image": "@assets/images/logo.svg"
+  },
+  "persons": [
+    { "name": "Nils", "age": 20 },
+    { "name": "Robert", "age": 10 },
+    { "name": "Margaret", "age": 40 }
+  ],
+  "pages": [
     {
       "url": "index.html",
       "title": "Главная"
@@ -10,11 +20,7 @@
     },
     {
       "url": "ui.html",
-      "title": "Компоненты"
-    },
-    {
-      "url": "#",
-      "icon": "search"
+      "title": "UI"
     }
   ]
 }

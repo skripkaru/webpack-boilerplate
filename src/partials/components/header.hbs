@@ -1,13 +1,13 @@
 <header class="header">
   <div class="container">
     <div class="header__inner">
-      <a href="https://github.com/skripkaru/webpack-boilerplate" target="_blank">
-        <img width="40" src="assets/images/logo.svg" alt="" />
+      <a href="{{logo.url}}">
+        <img width="40" src="{{logo.image}}" alt="" />
       </a>
-      <nav>
-        <ul class="menu">
-          {{#each menu }} {{> menu-item}} {{/each }}
-        </ul>
+      <nav class="flex gap-xs">
+        {{#each pages }}
+        <a href="{{ url }}">{{ title }}</a>
+        {{/each }}
       </nav>
     </div>
   </div>

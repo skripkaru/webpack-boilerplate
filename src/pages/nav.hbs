@@ -1,13 +1,13 @@
 {{#>layouts/default title='Навигация' }}
 <section class="section">
-  <h1>Навигация</h1>
+  <h1>{{title}}</h1>
 
   <ul class="grid gap-xs">
-    {{#each menu }} {{#if title}}
+    {{#each pages }}
     <li>
       <a href="{{ url }}" target="_blank">{{ title }}</a>
     </li>
-    {{/if}} {{/each }}
+    {{/each }}
   </ul>
 </section>
 {{/layouts/default}}

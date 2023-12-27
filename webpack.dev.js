@@ -10,6 +10,11 @@ module.exports = merge(common, {
     static: {
       directory: path.resolve(__dirname, 'dist')
     },
-    watchFiles: ['src/**/*']
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true
+      }
+    }
   }
 })
