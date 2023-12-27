@@ -1,29 +1,21 @@
-const fs = require('fs')
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-const pages = fs.readdirSync(path.resolve(__dirname, 'src/pages'))
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
 
 module.exports = {
-  entry: ['./src/scripts/main.js', './src/styles/main.scss'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'scripts/[name].js',
-    assetModuleFilename: 'assets/images/[name][ext]'
+    path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    alias: {
+      '@scripts': path.join(__dirname, 'src/scripts'),
+      '@styles': path.join(__dirname, 'src/styles'),
+      '@assets': path.join(__dirname, 'src/assets'),
+      '@images': path.join(__dirname, 'src/assets/images')
+    }
   },
   module: {
     rules: [
-      {
-        test: /\.hbs$/i,
-        loader: 'handlebars-loader',
-        options: {
-          inlineRequires: /\/assets\/(:?images|audio|video)\//gi,
-          partialDirs: [path.resolve(__dirname, 'src/partials')]
-        }
-      },
       {
         test: /\.js$/i,
         exclude: /node_modules/,
@@ -31,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        use: ['css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/i,
@@ -50,18 +42,22 @@ module.exports = {
     ]
   },
   plugins: [
-    ...pages.map((page) => {
-      const pageName = path.parse(page).name
-      return new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, `src/pages/${pageName}.hbs`),
-        filename: `${pageName}.html`,
-        inject: 'body',
-        minify: false,
-        templateParameters: require(`./src/data.json`)
-      })
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].css'
+    new HtmlBundlerPlugin({
+      entry: 'src/pages/',
+      data: 'src/data.json',
+      js: {
+        filename: 'scripts/[name].js'
+      },
+      css: {
+        filename: 'styles/[name].css'
+      },
+      preprocessor: 'handlebars',
+      preprocessorOptions: {
+        partials: ['src/partials'],
+        helpers: {
+          arraySize: (array) => array.length
+        }
+      }
     }),
     new SVGSpritemapPlugin('src/assets/icons/*.svg', {
       output: {
@@ -73,15 +69,6 @@ module.exports = {
           title: false
         }
       }
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        path.resolve(__dirname, 'src/assets/favicon.svg'),
-        {
-          from: path.resolve(__dirname, 'src/assets/images'),
-          to: path.resolve(__dirname, 'dist/assets/images')
-        }
-      ]
     })
   ]
 }
