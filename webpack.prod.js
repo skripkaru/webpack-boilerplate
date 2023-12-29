@@ -25,12 +25,7 @@ module.exports = merge(common, {
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
-            plugins: [
-              ['gifsicle', { interlaced: true }],
-              ['jpegtran', { progressive: true }],
-              ['optipng', { optimizationLevel: 5 }],
-              ['svgo', { name: 'preset-default' }]
-            ]
+            plugins: ['imagemin-gifsicle', 'imagemin-mozjpeg', 'imagemin-pngquant', 'imagemin-svgo']
           }
         }
       })
