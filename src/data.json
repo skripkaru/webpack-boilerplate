@@ -1,26 +1,16 @@
 {
-  "image": "@assets/images/image.jpg",
-  "logo": {
-    "url": "#",
-    "image": "@assets/images/logo.svg"
-  },
-  "persons": [
-    { "name": "Nils", "age": 20 },
-    { "name": "Robert", "age": 10 },
-    { "name": "Margaret", "age": 40 }
-  ],
   "pages": [
     {
-      "url": "index.html",
-      "title": "Главная"
-    },
-    {
-      "url": "nav.html",
+      "url": "#",
       "title": "Навигация"
     },
     {
-      "url": "ui.html",
-      "title": "UI"
+      "url": "#",
+      "title": "UI Kit"
+    },
+    {
+      "url": "index.html",
+      "title": "Главная"
     }
   ]
 }

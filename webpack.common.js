@@ -1,6 +1,6 @@
 const path = require('path')
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 module.exports = {
   output: {
@@ -8,10 +8,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@scripts': path.join(__dirname, 'src/scripts'),
-      '@styles': path.join(__dirname, 'src/styles'),
       '@assets': path.join(__dirname, 'src/assets'),
-      '@images': path.join(__dirname, 'src/assets/images')
+      '@scripts': path.join(__dirname, 'src/scripts'),
+      '@styles': path.join(__dirname, 'src/styles')
     }
   },
   module: {
@@ -61,7 +60,7 @@ module.exports = {
     }),
     new SVGSpritemapPlugin('src/assets/icons/*.svg', {
       output: {
-        filename: 'sprite.svg'
+        filename: 'assets/sprite.svg'
       },
       sprite: {
         prefix: false,
