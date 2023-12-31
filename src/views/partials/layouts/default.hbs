@@ -17,11 +17,11 @@
   </head>
   <body>
     <div class="layout">
-      {{>components/header }}
+      {{ include 'components/header' }}
       <main class="main">
         <div class="container">{{> @partial-block }}</div>
       </main>
-      {{>components/footer }}
+      {{ include 'components/footer' }}
     </div>
   </body>
 </html>
