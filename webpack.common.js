@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 module.exports = {
   output: {
@@ -9,8 +8,8 @@ module.exports = {
   resolve: {
     alias: {
       '@assets': path.join(__dirname, 'src/assets'),
-      '@scripts': path.join(__dirname, 'src/scripts'),
-      '@styles': path.join(__dirname, 'src/styles')
+      '@scripts': path.join(__dirname, 'src/assets/scripts'),
+      '@styles': path.join(__dirname, 'src/assets/styles')
     }
   },
   module: {
@@ -42,30 +41,21 @@ module.exports = {
   },
   plugins: [
     new HtmlBundlerPlugin({
-      entry: 'src/pages/',
-      data: 'src/data.json',
+      entry: 'src/views/pages/',
+      data: 'src/data/global.json',
       js: {
-        filename: 'scripts/[name].js'
+        filename: 'assets/scripts/[name].js'
       },
       css: {
-        filename: 'styles/[name].css'
+        filename: 'assets/styles/[name].css'
       },
       preprocessor: 'handlebars',
       preprocessorOptions: {
-        partials: ['src/partials'],
+        root: path.resolve(__dirname, 'src/views/pages/'),
+        views: [path.resolve(__dirname, 'src/views/partials')],
+        partials: ['src/views/partials'],
         helpers: {
           arraySize: (array) => array.length
-        }
-      }
-    }),
-    new SVGSpritemapPlugin('src/assets/icons/*.svg', {
-      output: {
-        filename: 'assets/sprite.svg'
-      },
-      sprite: {
-        prefix: false,
-        generate: {
-          title: false
         }
       }
     })
