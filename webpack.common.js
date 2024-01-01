@@ -8,6 +8,8 @@ module.exports = {
   resolve: {
     alias: {
       '@assets': path.join(__dirname, 'src/assets'),
+      '@fonts': path.join(__dirname, 'src/assets/fonts'),
+      '@images': path.join(__dirname, 'src/assets/images'),
       '@scripts': path.join(__dirname, 'src/assets/scripts'),
       '@styles': path.join(__dirname, 'src/assets/styles')
     }
