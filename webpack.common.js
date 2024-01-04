@@ -7,11 +7,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@assets': path.join(__dirname, 'src/assets'),
-      '@fonts': path.join(__dirname, 'src/assets/fonts'),
-      '@images': path.join(__dirname, 'src/assets/images'),
-      '@scripts': path.join(__dirname, 'src/assets/scripts'),
-      '@styles': path.join(__dirname, 'src/assets/styles')
+      '@src': path.join(__dirname, 'src'),
+      '@fonts': path.join(__dirname, 'src/fonts'),
+      '@images': path.join(__dirname, 'src/images'),
+      '@scripts': path.join(__dirname, 'src/scripts'),
+      '@styles': path.join(__dirname, 'src/styles')
     }
   },
   module: {
@@ -29,33 +29,33 @@ module.exports = {
         test: /\.(svg|png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][ext]'
+          filename: 'images/[name][ext]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[name][ext]'
+          filename: 'fonts/[name][ext]'
         }
       }
     ]
   },
   plugins: [
     new HtmlBundlerPlugin({
-      entry: 'src/views/pages/',
+      entry: 'src/pages/',
       data: 'src/data/global.json',
       js: {
-        filename: 'assets/scripts/[name].js'
+        filename: 'scripts/[name].js'
       },
       css: {
-        filename: 'assets/styles/[name].css'
+        filename: 'styles/[name].css'
       },
       preprocessor: 'handlebars',
       preprocessorOptions: {
-        root: path.resolve(__dirname, 'src/views/pages/'),
-        views: [path.resolve(__dirname, 'src/views/partials')],
-        partials: ['src/views/partials'],
+        root: path.resolve(__dirname, 'src/pages/'),
+        views: [path.resolve(__dirname, 'src/partials')],
+        partials: ['src/partials'],
         helpers: {
           arraySize: (array) => array.length
         }
