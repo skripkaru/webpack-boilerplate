@@ -5,7 +5,7 @@ export const isMobilePlus = (width = 768) => {
 
   mediaQuery.addListener(handleChange)
 
-  handleChange(mediaQuery)
+  return handleChange(mediaQuery)
 }
 
 export const isMobile = (width = 767) => {
@@ -15,7 +15,7 @@ export const isMobile = (width = 767) => {
 
   mediaQuery.addListener(handleChange)
 
-  handleChange(mediaQuery)
+  return handleChange(mediaQuery)
 }
 
 export const isTabletPlus = (width = 1200) => {
@@ -25,7 +25,7 @@ export const isTabletPlus = (width = 1200) => {
 
   mediaQuery.addListener(handleChange)
 
-  handleChange(mediaQuery)
+  return handleChange(mediaQuery)
 }
 
 export const isTablet = (width = 1199) => {
@@ -35,5 +35,5 @@ export const isTablet = (width = 1199) => {
 
   mediaQuery.addListener(handleChange)
 
-  handleChange(mediaQuery)
+  return handleChange(mediaQuery)
 }
