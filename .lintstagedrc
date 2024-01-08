@@ -1,0 +1,5 @@
+{
+  "*.js": "yarn lint",
+  "*.scss": "yarn lint:css",
+  "*.{js,scss,hbs,json,md}": "yarn format"
+}
