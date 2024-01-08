@@ -19,7 +19,9 @@ body {
   min-width: 360px;
   margin: 0;
   font-family: var(--base-font);
+  font-size: var(--font-size);
   font-feature-settings: 'pnum' on, 'lnum' on;
+  line-height: var(--line-height);
   text-size-adjust: 100%;
   text-rendering: optimizespeed;
 }

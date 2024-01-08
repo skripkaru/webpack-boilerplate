@@ -6,10 +6,13 @@
 @import 'config/mixins';
 @import 'config/fonts';
 @import 'config/global';
+@import 'config/typography';
 @import 'config/utils';
 
 // UI
 @import 'ui/container';
+@import 'ui/title';
+@import 'ui/text';
 
 // Components
 @import 'components/header';
