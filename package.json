@@ -12,17 +12,6 @@
     "format": "prettier --ignore-path .gitignore --write .",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "src/**/*.js": [
-      "yarn lint"
-    ],
-    "src/**/*.scss": [
-      "yarn lint:css"
-    ],
-    "src/**/*.{js,scss,hbs}": [
-      "yarn format"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
@@ -65,8 +54,5 @@
   "dependencies": {
     "focus-visible": "^5.2.0",
     "normalize.css": "^8.0.1"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
