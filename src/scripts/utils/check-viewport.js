@@ -3,7 +3,7 @@ export const isMobilePlus = (width = 768) => {
 
   const handleChange = (e) => e.matches
 
-  mediaQuery.addListener(handleChange)
+  mediaQuery.addEventListener('change', handleChange)
 
   return handleChange(mediaQuery)
 }
@@ -13,27 +13,37 @@ export const isMobile = (width = 767) => {
 
   const handleChange = (e) => e.matches
 
-  mediaQuery.addListener(handleChange)
+  mediaQuery.addEventListener('change', handleChange)
 
   return handleChange(mediaQuery)
 }
 
-export const isTabletPlus = (width = 1200) => {
+export const isDesktop = (width = 1280) => {
   const mediaQuery = window.matchMedia(`(min-width: ${width}px)`)
 
   const handleChange = (e) => e.matches
 
-  mediaQuery.addListener(handleChange)
+  mediaQuery.addEventListener('change', handleChange)
 
   return handleChange(mediaQuery)
 }
 
-export const isTablet = (width = 1199) => {
+export const isOnlyTablet = (minWidth = 768, maxWidth = 1279) => {
+  const mediaQuery = window.matchMedia(`(min-width: ${minWidth}px) and (max-width: ${maxWidth}px`)
+
+  const handleChange = (e) => e.matches
+
+  mediaQuery.addEventListener('change', handleChange)
+
+  return handleChange(mediaQuery)
+}
+
+export const isTablet = (width = 1279) => {
   const mediaQuery = window.matchMedia(`(max-width: ${width}px)`)
 
   const handleChange = (e) => e.matches
 
-  mediaQuery.addListener(handleChange)
+  mediaQuery.addEventListener('change', handleChange)
 
   return handleChange(mediaQuery)
 }

@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "webpack-boilerplate",
-  "description": "Webpack Boilerplate",
+  "description": "This template provides a basic structure for developing websites. It is designed to ease the initial stages of project work by offering minimal setup for frontend development.",
   "author": "Evgeniy Skripkaru",
   "license": "ISC",
   "scripts": {
