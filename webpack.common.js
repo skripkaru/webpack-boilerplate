@@ -54,11 +54,9 @@ module.exports = {
       preprocessor: 'handlebars',
       preprocessorOptions: {
         root: path.resolve(__dirname, 'src/pages/'),
-        views: [path.resolve(__dirname, 'src/partials')],
-        partials: ['src/partials'],
-        helpers: {
-          arraySize: (array) => array.length
-        }
+        views: [path.resolve(__dirname, 'src/partials'), path.resolve(__dirname, 'src/icons')],
+        partials: ['src/partials', 'src/icons']
+        //helpers: [path.resolve(__dirname, 'src/helpers')]
       }
     })
   ]
