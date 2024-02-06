@@ -18,11 +18,11 @@
   </head>
   <body>
     <div class="layout">
-      {{ include 'components/header' }}
+      {{>components/header }}
       <main class="main">
         <div class="container">{{> @partial-block }}</div>
       </main>
-      {{ include 'components/footer' }}
+      {{>components/footer }}
     </div>
     <script src="@scripts/main.js"></script>
   </body>

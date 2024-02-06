@@ -3,13 +3,15 @@ const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[name][ext]'
   },
   resolve: {
     alias: {
       '@src': path.join(__dirname, 'src'),
-      '@fonts': path.join(__dirname, 'src/fonts'),
-      '@images': path.join(__dirname, 'src/images'),
+      '@assets': path.join(__dirname, 'src/assets'),
+      '@fonts': path.join(__dirname, 'src/assets/fonts'),
+      '@images': path.join(__dirname, 'src/assets/images'),
       '@scripts': path.join(__dirname, 'src/scripts'),
       '@styles': path.join(__dirname, 'src/styles')
     }
@@ -43,8 +45,8 @@ module.exports = {
   },
   plugins: [
     new HtmlBundlerPlugin({
-      entry: 'src/pages/',
-      data: 'src/data/global.json',
+      entry: 'src/views/pages/',
+      data: 'src/views/data/global.json',
       js: {
         filename: 'scripts/[name].js'
       },
@@ -53,10 +55,10 @@ module.exports = {
       },
       preprocessor: 'handlebars',
       preprocessorOptions: {
-        root: path.resolve(__dirname, 'src/pages/'),
-        views: [path.resolve(__dirname, 'src/partials'), path.resolve(__dirname, 'src/icons')],
-        partials: ['src/partials', 'src/icons']
-        //helpers: [path.resolve(__dirname, 'src/helpers')]
+        root: path.resolve(__dirname, 'src/views/'),
+        views: [path.resolve(__dirname, 'src/views/partials'), path.resolve(__dirname, 'src/assets/icons')],
+        partials: ['src/views/partials'],
+        helpers: [path.resolve(__dirname, 'src/views/helpers')]
       }
     })
   ]
