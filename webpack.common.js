@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new HtmlBundlerPlugin({
       entry: 'src/views/pages/',
-      data: 'src/views/data/global.json',
+      data: 'src/views/data/main.json',
       js: {
         filename: 'scripts/[name].js'
       },
