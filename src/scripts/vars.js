@@ -6,5 +6,5 @@ export default {
   root: document.querySelector(':root'),
   header: document.querySelector('header'),
   siteContainer: document.querySelector('.site-container'),
-  pageWrap: document.querySelector('.page-wrapper')
-}
+  pageWrap: document.querySelector('.page-wrapper'),
+};

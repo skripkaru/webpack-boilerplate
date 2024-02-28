@@ -1,3 +1,3 @@
-import 'focus-visible'
+import 'focus-visible';
 
-document.addEventListener('DOMContentLoaded', function () {})
+document.addEventListener('DOMContentLoaded', function () {});

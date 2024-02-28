@@ -1,16 +1,16 @@
 export const initHeader = () => {
-  const header = document.querySelector('.js-header')
-  const toggleClass = 'hide'
+  const header = document.querySelector('.js-header');
+  const toggleClass = 'hide';
 
-  let prevScrollPos = window.scrollY
+  let prevScrollPos = window.scrollY;
 
   window.addEventListener('scroll', () => {
-    let currentScrollPos = window.scrollY
+    let currentScrollPos = window.scrollY;
     if (prevScrollPos < currentScrollPos) {
-      header.classList.add(toggleClass)
+      header.classList.add(toggleClass);
     } else {
-      header.classList.remove(toggleClass)
+      header.classList.remove(toggleClass);
     }
-    prevScrollPos = currentScrollPos
-  })
-}
+    prevScrollPos = currentScrollPos;
+  });
+};
