@@ -27,14 +27,7 @@ module.exports = {
         test: /\.(svg|png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          // keep original directory structure
-          filename: ({ filename }) => {
-            const srcPath = 'src/assets/images';
-            const regExp = new RegExp(`[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`);
-            const assetPath = path.dirname(regExp.exec(filename)[1].replace('@', '').replace(/\\/g, '/'));
-
-            return `images/${assetPath}/[name][ext]`;
-          },
+          filename: 'images/[name][ext]',
         },
       },
       {
@@ -48,8 +41,13 @@ module.exports = {
   },
   plugins: [
     new HtmlBundlerPlugin({
-      entry: 'src/views/pages/',
-      data: 'src/views/data/main.json',
+      entry: {
+        index: {
+          import: 'src/views/pages/index.hbs',
+          data: 'src/views/data/index.json',
+        },
+      },
+      data: 'src/views/data/global.json',
       js: {
         filename: 'scripts/[name].js',
       },
