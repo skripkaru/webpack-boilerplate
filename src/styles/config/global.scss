@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height, 40px);
   box-sizing: border-box;
   font-feature-settings: 'pnum' on, 'lnum' on;
   text-size-adjust: 100%;
@@ -14,15 +15,17 @@ html {
 
 html,
 body {
+  scrollbar-gutter: stable;
   height: 100%;
 }
 
 body {
-  min-width: 360px;
+  overflow-x: hidden;
+  min-width: 320px;
   margin: 0;
-  font-family: var(--base-font);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 ul,
@@ -64,8 +67,8 @@ textarea {
   resize: none;
 }
 
-input,
 button,
+input,
 textarea,
 select {
   font: inherit;
@@ -80,6 +83,10 @@ img {
   object-fit: cover;
 }
 
+svg {
+  vertical-align: middle;
+}
+
 video,
 iframe {
   display: block;
@@ -89,43 +96,41 @@ address {
   font-style: normal;
 }
 
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0.75em 0;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
-p {
-  margin: 1em 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+h4 {
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-article > * + * {
-  margin-top: 1em;
+h1 {
+  font-size: 48px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+::selection {
+  color: var(--color-base-50);
+  background-color: var(--color-base-300);
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -133,23 +138,6 @@ article > * + * {
 }
 
 .layout {
-  display: flex;
-  flex-direction: column;
-  min-height: var(--vh, 100%);
-}
-
-.header {
-  flex: 0 1 auto;
-}
-
-.main {
-  flex: 1 1 auto;
-}
-
-.footer {
-  flex: 0 1 auto;
-}
-
-.section {
-  margin: 32px 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
 }

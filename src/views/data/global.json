@@ -1,7 +1,8 @@
 {
+  "pageTitle": "Навигация",
   "pages": [
     {
-      "url": "index.html",
+      "url": "main.html",
       "title": "Главная"
     }
   ]

@@ -2,6 +2,27 @@ const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    open: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true,
+      },
+    },
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  cache: {
+    type: 'filesystem',
+  },
   resolve: {
     alias: {
       '@src': path.join(__dirname, 'src'),
@@ -44,7 +65,10 @@ module.exports = {
       entry: {
         index: {
           import: 'src/views/pages/index.hbs',
-          data: 'src/views/data/index.json',
+        },
+        main: {
+          import: 'src/views/pages/main.hbs',
+          data: 'src/views/data/main.json',
         },
       },
       data: 'src/views/data/global.json',

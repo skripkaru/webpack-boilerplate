@@ -1,34 +1,24 @@
 :root {
-  // Globals
-  --base-font: 'Roboto', sans-serif;
-  --font-size: 16px;
-  --line-height: 1.4;
-  --border-radius: 4px;
-  --box-shadow: 0 10px 20px rgb(0 0 0 / 15%);
-  --transition: 0.3s ease-in-out;
+  // Fonts
+  --font-base: 'Roboto', sans-serif;
 
   // Colors
-  --primary: #409eff;
-  --primary-dark: #337ecc;
-  --success: #67c23a;
-  --success-light: #f0f9eb;
-  --warning: #e6a23c;
-  --warning-light: #fdf6ec;
-  --error: #f56c6c;
-  --error-light: #fef0f0;
-  --base-dark: #333;
-  --dark: #444;
-  --info: #666;
-  --default: #999;
-  --neutral: #ddd;
-  --line: #eee;
-  --bg: #f3f3f3;
-  --light: #f8f8f8;
-  --base-light: #fff;
+  --color-base-950: #000;
+  --color-base-900: #1a1a1a;
+  --color-base-800: #333;
+  --color-base-700: #4d4d4d;
+  --color-base-600: #666;
+  --color-base-500: #808080;
+  --color-base-400: #999;
+  --color-base-300: #b3b3b3;
+  --color-base-200: #ccc;
+  --color-base-100: #e6e6e6;
+  --color-base-50: #fff;
 
   // Z-index
-  --z-index-header: 100;
-  --z-index-menu: 200;
-  --z-index-overlay: 900;
-  --z-index-modal: 1000;
+  --z-index-900: 900;
+  --z-index-100: 100;
+
+  // Transition
+  --transition-base: 0.3s ease-in-out;
 }
