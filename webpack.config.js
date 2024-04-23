@@ -49,6 +49,13 @@ module.exports = {
           filename: 'fonts/[name][ext]',
         },
       },
+      {
+        test: /\.(mov|mp4)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'videos/[name][ext]',
+        },
+      },
     ],
   },
   plugins: [
