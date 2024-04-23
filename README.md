@@ -36,7 +36,6 @@
 ├── dist/                      # Собранный проект
 ├── node_modules/              # Зависимости проекта
 ├── .husky/                    # Конфигурация Husky
-├── .babelrc                   # Конфигурация Babel
 ├── .editorconfig              # Конфигурация EditorConfig
 ├── .eslintrc                  # Конфигурация ESLint
 ├── .stylelintrc               # Конфигурация StyleLint
@@ -60,7 +59,6 @@
 - **Husky и Lint-staged**: Для автоматической проверки кода перед коммитом с использованием ESLint, StyleLint и
   Prettier.
 - **Browserslist**: Для определения поддерживаемых браузеров.
-- **Babel**: Для транспиляции современного JavaScript в код, совместимый со старыми версиями браузеров.
 - **EditorConfig**: Для установки единого стиля кодирования в редакторах кода разработчиков.
 
 ## Инструкции по использованию
@@ -103,10 +101,10 @@
 
 ## Настройка и кастомизация
 
-### ESLint, StyleLint, Prettier, PostCSS, Browserslist и Babel
+### ESLint, StyleLint, Prettier, PostCSS, Browserslist
 
 Измените конфигурации в соответствующих
-файлах (`.eslintrc.js`, `.stylelintrc`, `.prettierrc`, `.postcssrc`, `.browserslistrc`, `.babelrc`) в соответствии с
+файлах (`.eslintrc.js`, `.stylelintrc`, `.prettierrc`, `.postcssrc`, `.browserslistrc`) в соответствии с
 вашими предпочтениями.
 
 ### Webpack
