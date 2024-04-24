@@ -60,15 +60,17 @@ module.exports = {
   },
   plugins: [
     new HtmlBundlerPlugin({
-      entry: {
-        index: {
+      entry: [
+        {
+          filename: 'index.html',
           import: 'src/views/pages/index.hbs',
         },
-        main: {
+        {
+          filename: 'main.html',
           import: 'src/views/pages/main.hbs',
           data: 'src/views/data/main.json',
         },
-      },
+      ],
       data: 'src/views/data/global.json',
       js: {
         filename: 'scripts/[name].js',
