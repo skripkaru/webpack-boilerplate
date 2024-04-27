@@ -40,6 +40,9 @@
   },
   "dependencies": {
     "focus-visible": "^5.2.0",
+    "gsap": "^3.12.5",
+    "lodash": "^4.17.21",
+    "micromodal": "^0.4.10",
     "normalize.css": "^8.0.1"
   }
 }

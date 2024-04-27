@@ -1,0 +1,121 @@
+.modal {
+  z-index: var(--z-index-900);
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__overlay {
+    will-change: transform;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(17 17 17 / 50%);
+  }
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    will-change: transform;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 16px;
+    background-color: var(--color-base-50);
+    @include scrollbar;
+  }
+
+  &__header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.modal[aria-hidden='false'] .modal__overlay {
+  animation: fadeIn 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden='false'] .modal__container {
+  animation: slideIn 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden='true'] .modal__overlay {
+  animation: fadeOut 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden='true'] .modal__container {
+  animation: slideOut 0.5s cubic-bezier(0, 0, 0.2, 1);
+}

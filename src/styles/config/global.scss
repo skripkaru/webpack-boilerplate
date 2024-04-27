@@ -1,8 +1,7 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height, 40px);
+  scroll-padding-top: var(--header-height);
   box-sizing: border-box;
-  font-feature-settings: 'pnum' on, 'lnum' on;
   text-size-adjust: 100%;
   text-rendering: optimizespeed;
 }
@@ -99,14 +98,6 @@ address {
 h1,
 h2,
 h3,
-h4,
-p {
-  margin: 0.75em 0;
-}
-
-h1,
-h2,
-h3,
 h4 {
   font-weight: 500;
   line-height: 1.2;
@@ -135,9 +126,4 @@ h4 {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
 }

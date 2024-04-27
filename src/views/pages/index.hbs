@@ -1,13 +1,13 @@
 {{#>layouts/default pageTitle='Навигация' }}
 
-<h1>{{ pageTitle }}</h1>
-
-<ul>
-  {{#each pages}}
-  <li>
-    <a href="{{ url }}" target="_blank">{{ title }}</a>
-  </li>
-  {{/each}}
-</ul>
+<section>
+  <ul>
+    {{#each pages}}
+    <li>
+      <a href="{{ url }}" target="_blank">{{ title }}</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
 
 {{/layouts/default}}

@@ -1,0 +1,21 @@
+<div class="modal" id="example" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__inner">
+      <div class="modal__container" role="dialog" aria-modal="true">
+        <header class="modal__header">
+          <h3 class="modal__title">Title</h3>
+          <button class="modal__close" aria-label="Закрыть" data-micromodal-close>
+            {{include 'close.svg'}}
+          </button>
+        </header>
+        <main class="modal__content">
+          <p>Content</p>
+        </main>
+        <footer class="modal__footer">
+          <button class="button button--primary">Enter</button>
+          <button class="button button--secondary" aria-label="Закрыть" data-micromodal-close>Close</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

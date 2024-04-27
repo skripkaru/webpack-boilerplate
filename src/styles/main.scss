@@ -9,8 +9,11 @@
 @import 'config/utils';
 
 // UI
-@import 'ui/container';
+@import 'components/ui/container';
+@import 'components/ui/button';
+@import 'components/ui/modal';
 
 // Components
+@import 'components/layout';
 @import 'components/header';
 @import 'components/footer';

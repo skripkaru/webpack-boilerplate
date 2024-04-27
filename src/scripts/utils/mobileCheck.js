@@ -1,15 +1,14 @@
-import vars from '../config/vars';
-
 export const mobileCheck = () => {
+  const html = document.documentElement;
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
   if (/android/i.test(userAgent)) {
-    vars.htmlEl.classList.add('page--android');
+    html.classList.add('page--android');
     return 'Android';
   }
 
   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    vars.htmlEl.classList.add('page--ios');
+    html.classList.add('page--ios');
     return 'iOS';
   }
 

@@ -1,16 +1,20 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { setElementHeight } from '../utils/setElementHeight';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const initHeader = () => {
   const header = document.querySelector('.js-header');
-  const toggleClass = 'hide';
 
-  let prevScrollPos = window.scrollY;
+  if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    let currentScrollPos = window.scrollY;
-    if (prevScrollPos < currentScrollPos) {
-      header.classList.add(toggleClass);
-    } else {
-      header.classList.remove(toggleClass);
-    }
-    prevScrollPos = currentScrollPos;
+  setElementHeight(header, '--header-height');
+
+  ScrollTrigger.create({
+    trigger: header,
+    start: 0,
+    end: () => ScrollTrigger.maxScroll(window),
+    toggleClass: 'is-fixed',
   });
 };

@@ -1,14 +1,6 @@
 :root {
-  --container-padding: 32px;
-  --container-width: 1200px;
-
-  @include tablet {
-    --container-padding: 24px;
-  }
-
-  @include mobile {
-    --container-padding: 16px;
-  }
+  --container-padding: 16px;
+  --container-width: 1280px;
 }
 
 .container {

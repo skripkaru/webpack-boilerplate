@@ -1,0 +1,36 @@
+.button {
+  --size: 12px;
+  --unit: 14px;
+  --color: inherit;
+  --background: transparent;
+  --border: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size);
+  font-size: var(--unit);
+  line-height: 1;
+  color: var(--color);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    --color: var(--color-base-50);
+    --border: var(--color-base-100);
+    --background: var(--color-base-300);
+  }
+
+  &--secondary {
+    --border: var(--color-base-100);
+    --background: transparent;
+  }
+}
